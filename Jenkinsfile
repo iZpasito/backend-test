@@ -8,17 +8,15 @@ pipeline {
                     reuseNode true
                 }
             }
-            stages{
-                stage('Instalacion de dependencias'){
+            stage('Instalacion de dependencias'){
                     steps{
                         sh 'npm install'
                     }
                 }
-                stage('Ejecucion de pruebas automatizadas'){
+            stage('Ejecucion de pruebas automatizadas'){
                     steps{
                         sh 'npm run test:cov'
                     }
-                }
             }
         }
     }
